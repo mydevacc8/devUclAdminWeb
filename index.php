@@ -5,10 +5,8 @@
     <body>
         <?php echo '<p>Hello World</p>'; ?> 
     </body>
+    <?php
+include 'api/getTours.php';
+?>
 </html>
 
-<?php
-include 'api/getTours.php';
-
-
-?>
