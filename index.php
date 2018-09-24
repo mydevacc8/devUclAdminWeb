@@ -8,8 +8,7 @@
 </html>
 
 <?php
-include 'connection.php';
-include 'getTours.php';
+include 'api/getTours.php';
 
 
 ?>

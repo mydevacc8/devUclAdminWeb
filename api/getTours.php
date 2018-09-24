@@ -1,4 +1,5 @@
 <?php
+include 'connection.php';
 $stmt = $conn->query('SELECT * FROM tours');
 while ($row = $stmt->fetch())
 {
