@@ -6,7 +6,7 @@
         <?php echo '<p>Hello World</p>'; ?> 
     </body>
     <?php
-include 'api/getTours.php';
-?>
+        include 'api/getTours.php';
+    ?>
 </html>
 
