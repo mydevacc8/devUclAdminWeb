@@ -4,7 +4,9 @@ $stmt = $conn->query('SELECT * FROM tours');
 while ($row = $stmt->fetch())
 {
     $data[] = array(
-        'name' => $row['name']
+        'id' => $row['id'],
+        'name' => $row['name'],
+        'image' => $row['image']
     );
 }
 
