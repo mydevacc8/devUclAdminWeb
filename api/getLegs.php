@@ -2,8 +2,8 @@
 include 'connection.php';
 if (isset($_GET['leg'])) {
     $legId = $_GET['leg'];
-    
-    $stmt = $conn->query('SELECT * FROM legs WHERE id=?'.$legId);
+
+    $stmt = $conn->query('SELECT * FROM legs WHERE id='.$legId);
     while ($row = $stmt->fetch())
     {
         $data[] = array(
