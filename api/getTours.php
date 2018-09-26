@@ -14,7 +14,7 @@ if($stmt){
     $result = '{"success":true, "data":' . json_encode($data) . '}';
 }
 else{
-    $result = "{'success':false}";
+    $result = '{"success":false}';
 }
 
 echo $result;
