@@ -9,7 +9,7 @@ if (isset($_GET['event'])) {
         $data[] = array(
             'id' => $row['id'],
             'name' => $row['name'],
-            'descritpion' => $row['description']
+            'description' => $row['description']
         );
     }
 
