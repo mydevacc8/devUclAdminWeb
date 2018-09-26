@@ -3,7 +3,7 @@ include 'connection.php';
 if (isset($_GET['beacon'])) {
     $beaconId = $_GET['beacon'];
 
-    $stmt = $conn->query('SELECT beaconMajor FROM beacons WHERE id='.$beqconId);
+    $stmt = $conn->query('SELECT beaconMajor FROM beacons WHERE id='.$beaconId);
     while ($row = $stmt->fetch())
     {
         $data[] = array(
