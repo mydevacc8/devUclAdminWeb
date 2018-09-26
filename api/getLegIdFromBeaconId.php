@@ -1,7 +1,7 @@
 <?php
 include 'connection.php';
 if (isset($_GET['beacon'])) {
-    $beaconDd = $_GET['beacon'];
+    $beaconId = $_GET['beacon'];
 
     $stmt = $conn->query('SELECT legId FROM legRelations WHERE beaconId='.$beaconId);
     while ($row = $stmt->fetch())
