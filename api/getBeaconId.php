@@ -12,7 +12,7 @@ if (isset($_GET['leg'])) {
     }
 
     if($stmt){
-        echo $data[0]['id'];
+
         if ($data[0]['id'] == null){
             $result = '{"success":false}';
         }else{
