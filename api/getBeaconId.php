@@ -12,7 +12,12 @@ if (isset($_GET['leg'])) {
     }
 
     if($stmt){
-        $result = '{"success":true, "data":' . json_encode($data) . '}';
+        if ($data[0].id == null){
+            $result = '{"success":false}';
+        }else{
+            $result = '{"success":true, "data":' . json_encode($data) . '}';
+        }
+        
     }
     else{
         $result = '{"success":false}';
