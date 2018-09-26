@@ -13,7 +13,7 @@ if (isset($_GET['beacon'])) {
 
     if($stmt){
 
-        if ($data[0]['id'] == null){
+        if ($data[0]['legId'] == null){
             $result = '{"success":false}';
         }else{
             $result = '{"success":true, "data":' . json_encode($data) . '}';
