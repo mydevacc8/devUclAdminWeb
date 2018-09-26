@@ -12,6 +12,7 @@ if (isset($_GET['leg'])) {
     }
 
     if($stmt){
+        echo $data;
         $result = '{"success":true, "data":' . json_encode($data) . '}';
         
     }
