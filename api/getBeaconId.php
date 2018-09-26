@@ -7,7 +7,7 @@ if (isset($_GET['leg'])) {
     while ($row = $stmt->fetch())
     {
         $data[] = array(
-            'id' => $row['legId']
+            'id' => $row['beaconId']
         );
     }
 
