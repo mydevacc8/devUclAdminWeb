@@ -7,7 +7,7 @@
     </body>
     <?php
         include 'api/getToursWeb.php';
-        echo $result;
+        echo $result['data'];
     ?>
 </html>
 
