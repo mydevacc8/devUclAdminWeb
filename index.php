@@ -7,7 +7,7 @@
     </body>
     <?php
         include 'api/getToursWeb.php';
-        $decode = json_decode($result);
+        $decode = json_decode($result,true);
         echo $decode->data[0];
     ?>
 </html>
