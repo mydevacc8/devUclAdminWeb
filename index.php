@@ -8,7 +8,19 @@
     <?php
         include 'api/getToursWeb.php';
         $decode = json_decode($result,true);
-        echo $decode['data'][0]['name'];
+        echo $decode['data'].length();
+        echo <<< _END
+
+        <table id="wordTable">
+                <tr class='header'>
+                    <th>Tour Id</th>
+                    <th>Tour Name</th>
+                    <th>Tour Image</th>
+                    <th>Operations</th>
+                </tr>
+
+_END;
+
     ?>
 </html>
 
