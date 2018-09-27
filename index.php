@@ -8,7 +8,7 @@
     <?php
         include 'api/getToursWeb.php';
         $decode = json_decode($result,true);
-        echo $decode['data'].length();
+        echo count($decode['data']);
         echo <<< _END
 
         <table id="wordTable">
