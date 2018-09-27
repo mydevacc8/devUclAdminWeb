@@ -11,7 +11,7 @@ while ($row = $stmt->fetch())
 }
 
 if($stmt){
-    $result = '{"success":true, "data":' . json_encode($data) . '}';
+    $result = '{"success":"true", "data":' . json_encode($data) . '}';
 }
 else{
     $result = '{"success":false}';
