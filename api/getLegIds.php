@@ -8,7 +8,7 @@ if (isset($_GET['tour'])) {
 }
 
 function getLegs($id){
-    $stmt = $conn->query('SELECT * FROM tourRelations WHERE tourId='.$Id);
+    $stmt = $conn->query('SELECT * FROM tourRelations WHERE tourId='.$id);
     while ($row = $stmt->fetch())
     {
         $data[] = array(
