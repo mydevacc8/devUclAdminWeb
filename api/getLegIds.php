@@ -8,6 +8,7 @@ if (isset($_GET['tour'])) {
 }
 
 function getLegs($id){
+    echo $conn;
     $stmt = $conn->query('SELECT * FROM tourRelations WHERE tourId='.$id);
     while ($row = $stmt->fetch())
     {
