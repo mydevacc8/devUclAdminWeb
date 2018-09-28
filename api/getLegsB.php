@@ -1,13 +1,27 @@
 <?php
 include 'connection.php';
-if (isset($_GET['tour'])) {
-    $tourId = $_GET['tour'];
+include 'getLegIds.php';
 
-    $stmt = $conn->query('SELECT * FROM tourRelations WHERE tourId='.$tourId);
+
+function getLegs($id, $conn){ 
+    $result = getLegIds($id,$conn);
+    return $result;
+}
+
+if (isset($_GET['leg'])) {
+    $legId = $_GET['leg'];
+
+    echo getLegs($id, $conn);
+    /*$stmt = $conn->query('SELECT * FROM legs WHERE id='.$legId);
     while ($row = $stmt->fetch())
     {
         $data[] = array(
-            'id' => $row['legId']
+            'id' => $row['id'],
+            'name' => $row['name'],
+            'description' => $row['description'],
+            'lat' => $row['lat'],
+            'long' => $row['long'],
+            'address' => $row['address']
         );
     }
 
@@ -16,12 +30,12 @@ if (isset($_GET['tour'])) {
     }
     else{
         $result = '{"success":false}';
-    }
-}else{
+ } */  
+}
+else{
     $result = '{"success":false}';
 }
 
 
-
-echo $result;
+//echo $result;
 ?>
