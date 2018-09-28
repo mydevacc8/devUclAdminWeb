@@ -1,12 +1,5 @@
 <?php
 include 'connection.php';
-if (isset($_GET['tour'])) {
-    $tourId = $_GET['tour'];
-    getLegs($tourId);
-    
-    
-}
-
 function getLegs($id){
     
     $stmt = $conn->query('SELECT * FROM tourRelations WHERE tourId='.$id);
@@ -25,6 +18,11 @@ function getLegs($id){
     }
     echo $result;
 }
-
+if (isset($_GET['tour'])) {
+    $tourId = $_GET['tour'];
+    getLegs($tourId);
+    
+    
+}
 
 ?>
