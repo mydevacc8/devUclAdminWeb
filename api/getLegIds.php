@@ -16,12 +16,11 @@ function getLegs($id, $conn){
     else{
         $result = '{"success":false}';
     }
-    
+    return $result;
 }
 if (isset($_GET['tour'])) {
     $tourId = $_GET['tour'];
-    getLegs($tourId,$conn);
-    echo $result;
+    echo getLegs($tourId,$conn);
     
 }
 
