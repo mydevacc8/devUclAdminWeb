@@ -1,6 +1,6 @@
 <?php
 include 'connection.php';
-function getLegs($id){
+function getLegs($id, $conn){
     
     $stmt = $conn->query('SELECT * FROM tourRelations WHERE tourId='.$id);
     while ($row = $stmt->fetch())
@@ -20,7 +20,7 @@ function getLegs($id){
 }
 if (isset($_GET['tour'])) {
     $tourId = $_GET['tour'];
-    getLegs($tourId);
+    getLegs($tourId,$conn);
     
     
 }
