@@ -2,12 +2,7 @@
 include 'connection.php';
 if (isset($_GET['tour'])) {
     $tourId = $_GET['tour'];
-    getLegs($tourId);
-    echo $result;
-    
-}
 
-function getLegs($id){
     $stmt = $conn->query('SELECT * FROM tourRelations WHERE tourId='.$tourId);
     while ($row = $stmt->fetch())
     {
@@ -22,7 +17,11 @@ function getLegs($id){
     else{
         $result = '{"success":false}';
     }
+}else{
+    $result = '{"success":false}';
 }
 
 
+
+echo $result;
 ?>

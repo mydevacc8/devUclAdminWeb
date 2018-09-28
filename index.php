@@ -35,8 +35,8 @@ _END;
             echo "<td>".$decode['data'][$i]['name']."</td>";
             echo "<td>".$decode['data'][$i]['image']."</td>";
             echo "<td> 
-                <button onclick=\"\" type='button'>edit</button>
-                <button type='button' class='delBtt' value='".$row['id']."'>delete</button>
+                <button onclick=\"location.href='\ api/viewTour.php?id=".$decode['data'][$i]['id']."\" type='button'>view</button>
+                <button type='button' class='delBtt' value='".$decode['data'][$i]['id']."'>delete</button>
             </td>";
             echo "</tr>";
         }
