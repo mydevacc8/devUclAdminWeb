@@ -45,7 +45,6 @@
         $tourId = $_GET['tour'];
         $resultId = getLegIds($tourId, $conn);
         $decodeId = json_decode($resultId);
-        echo 'I am here';
         for ($i = 0; i < count($decodeId['data']); $i++){
             $resultLeg = getLeg($decodeId['data'][$i]['id']);
             $decodeLeg = json_decode($resultLeg);
@@ -57,6 +56,7 @@
                 'long' => $decodeLeg['data'][0]['long'],
                 'address' => $decodeLeg['data'][0]['address']
             );
+            echo 'i am here';
         }
 
         $returnData = '{"succedd":true, "data:'.json_encode($data).'}';
