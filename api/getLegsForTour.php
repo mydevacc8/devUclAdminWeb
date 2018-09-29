@@ -45,6 +45,7 @@
         $tourId = $_GET['tour'];
         $resultId = getLegIds($tourId, $conn);
         $decodeId = json_decode($resultId);
+        echo count($decodeId['data']);
         for ($i = 0; i < count($decodeId['data']); $i++){
             $resultLeg = getLeg($decodeId['data'][$i]['id']);
             $decodeLeg = json_decode($resultLeg);
