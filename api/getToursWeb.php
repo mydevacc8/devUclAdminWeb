@@ -16,4 +16,5 @@ if($stmt){
 else{
     $result = '{"success":false}';
 }
+//$conn = null;
 ?>

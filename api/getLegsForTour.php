@@ -39,16 +39,16 @@
         else{
             $result = '{"success":false}';
         }
+
+        return $result;
     }
 
-    if (isset($_GET['tour'])) {
-        $tourId = $_GET['tour'];
+    function run($tourId, $conn){
         $resultId = getLegIds($tourId, $conn);
-        $decodeId = json_decode($resultId);
-        echo count($decodeId['data']);
-        for ($i = 0; i < count($decodeId['data']); $i++){
-            $resultLeg = getLeg($decodeId['data'][$i]['id']);
-            $decodeLeg = json_decode($resultLeg);
+        $decodeId = json_decode($resultId,true);
+        for ($i = 0; $i < count($decodeId['data']); $i++){
+            $resultLeg = getLeg($decodeId['data'][$i]['id'],$conn);
+            $decodeLeg = json_decode($resultLeg,true);
             $data[] = array(
                 'id' => $decodeLeg['data'][0]['id'],
                 'name' => $decodeLeg['data'][0]['name'],
@@ -57,10 +57,32 @@
                 'long' => $decodeLeg['data'][0]['long'],
                 'address' => $decodeLeg['data'][0]['address']
             );
-            echo 'i am here';
+            
         }
 
-        $returnData = '{"succedd":true, "data:'.json_encode($data).'}';
+        $returnData = '{"success":true, "data":'.json_encode($data).'}';
+        return $returnData;
+    }
+
+    if (isset($_GET['tour'])) {
+        $tourId = $_GET['tour'];
+        $resultId = getLegIds($tourId, $conn);
+        $decodeId = json_decode($resultId,true);
+        for ($i = 0; $i < count($decodeId['data']); $i++){
+            $resultLeg = getLeg($decodeId['data'][$i]['id'],$conn);
+            $decodeLeg = json_decode($resultLeg,true);
+            $data[] = array(
+                'id' => $decodeLeg['data'][0]['id'],
+                'name' => $decodeLeg['data'][0]['name'],
+                'description' => $decodeLeg['data'][0]['description'],
+                'lat' => $decodeLeg['data'][0]['lat'],
+                'long' => $decodeLeg['data'][0]['long'],
+                'address' => $decodeLeg['data'][0]['address']
+            );
+            
+        }
+
+        $returnData = '{"success":true, "data:'.json_encode($data).'}';
 
         echo $returnData;
     }
