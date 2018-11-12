@@ -19,7 +19,7 @@ _END;
             echo "<td>".$decode['data'][$i]['name']."</td>";
             echo "<td>".$decode['data'][$i]['description']."</td>";
             echo "<td> 
-                <button class='btn btn-warning' onclick=\"window.location.href='viewLeg.php?id=".$decode['data'][$i]['id']."'\" type='button'>Edit</button>
+                <button class='btn btn-warning' onclick=\"window.location.href='editEvent.php?id=".$decode['data'][$i]['id']."'\" type='button'>Edit</button>
                 <button type='button' class='delBtn btn btn-danger' value='".$decode['data'][$i]['id']."'>delete</button></td>";
             echo "</tr>";
         }
